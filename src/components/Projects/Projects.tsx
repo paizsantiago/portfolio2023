@@ -1,7 +1,7 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import data from '../../projects.json'
 import CardProject from './CardProject';
-import {BsChevronCompactRight, BsChevronCompactLeft} from 'react-icons/bs'
+import {motion} from 'framer-motion'
 
 export interface Project {
     img: string,
@@ -13,20 +13,16 @@ export interface Project {
 
 const Projects: React.FC = () => {
     
+    
     const carousel: React.MutableRefObject<any> = useRef(null)
+    
+    const [width, setWidth] = useState(0);
 
-    const scrollLeft = (e: any) =>{
-        e.preventDefault();
-        carousel.current.scrollLeft -= carousel.current.offsetWidth;
-    }
-
-    const scrollRight = (e: any) =>{
-        e.preventDefault();
-        carousel.current.scrollLeft += carousel.current.offsetWidth;
-    }
-
-    const iconProp: string = 'text-5xl text-slate-900 bg-gray-200 rounded-full m-4 p-2'
     const projects: Project[] = data.projects;
+
+    useEffect(()=>{
+        setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
+    },[])
 
     return (
         <div className='
@@ -34,7 +30,7 @@ const Projects: React.FC = () => {
             w-auto
             flex
             flex-col
-            justify-center
+            justify-evenly
             items-center
             relative
             bg-fondo3
@@ -42,6 +38,7 @@ const Projects: React.FC = () => {
             lg:col-span-9
             lg:row-span-1 
             lg:h-[100%]
+            -z-1
             '>
             <h2 id="projects" className='
             pt-20
@@ -56,13 +53,11 @@ const Projects: React.FC = () => {
             tracking-widest
             lg:text-5xl 
            '>Proyectos</h2>
-            <div ref={carousel} className='flex items-center w-[95%] gap-6 overflow-hidden snap-x h-[60vh] md:h-[100vh] mb-20 md:w-[45%] lg:w-[50%]'>
-                {projects.map((item) => <CardProject props={item}/>)}
-            </div>
-            <div className='absolute z-10 flex items-end h-[95%] justify-center md:h-auto md:justify-between w-[90%] lg:w-[80%]'>
-                    <button onClick={scrollLeft}><BsChevronCompactLeft className={iconProp}/></button>
-                    <button onClick={scrollRight}><BsChevronCompactRight className={iconProp}/></button>
-            </div>
+            <motion.div ref={carousel} className='cursor-grab overflow-hidden w-[90%] md:w-[70%] 2xl:w-[55%]' whileTap={{cursor: "grabbing"}}>
+                <motion.div drag="x" dragConstraints={{right: 0, left: -width}} className='flex items-center scroll-smooth h-[70vh]'>
+                    {projects.map((item) => <CardProject props={item}/>)}
+                </motion.div>
+            </motion.div>
         </div>
     )
 }

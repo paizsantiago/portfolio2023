@@ -4,10 +4,22 @@ import { RiComputerFill} from 'react-icons/ri'
 import {BsBookFill} from 'react-icons/bs'
 import {FaCertificate} from 'react-icons/fa'
 import {AiFillPhone} from 'react-icons/ai'
+import {motion} from 'framer-motion'
+
 
 const Navbar: React.FC = () => {
 
   const liStyle: string = 'hover:opacity-50 cursor-pointer transition hover:-translate-y-1 hover:scale-110 ';
+  const animationLi = {
+    hidden: {
+      opacity: 0,
+      scale: .7
+    },
+    show:{
+      opacity: 1,
+      scale: 1
+    }
+  }
 
   return (
     <nav className='fixed
@@ -30,7 +42,7 @@ const Navbar: React.FC = () => {
         bg-white
       '>
           <ul className='lg:fixed lg:h-full flex lg:flex-col gap-6 justify-center text-slate-900 '>
-            <li className={liStyle}><a href="#main"><AiFillHome/></a></li>
+            <motion.li variants={animationLi} initial="hidden" animate="show" transition={{duration: .6, type: "tween"}} className={liStyle}><a href="#main"><AiFillHome/></a></motion.li>
             <li className={liStyle}><a href="#skills"><BsBookFill/></a></li>
             <li className={liStyle}><a href="#projects"><RiComputerFill/></a></li>
             <li className={liStyle}><a href="#certificate"><FaCertificate/></a></li>

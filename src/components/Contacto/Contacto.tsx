@@ -2,6 +2,7 @@ import React from "react";
 import { AiFillLinkedin } from "react-icons/ai";
 import { FaGithub } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
+import {motion} from 'framer-motion'
 
 const Contacto: React.FC = () => {
   const buttonProps =

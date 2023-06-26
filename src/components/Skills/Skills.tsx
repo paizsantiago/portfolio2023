@@ -9,6 +9,7 @@ import {
   SiMongodb,
 } from "react-icons/si";
 import { FaCss3Alt, FaSass, FaReact, FaGithub, FaNodeJs } from "react-icons/fa";
+import {motion} from 'framer-motion'
 
 const Skills: React.FC = () => {
   
@@ -46,22 +47,22 @@ const Skills: React.FC = () => {
       lg:grid-cols-4 
       grid-rows-3 
       justify-center gap-6">
-        <div className={`${cardStyle} hover:border-orange-600  hover:text-orange-600`}>
+        <motion.div className={`${cardStyle} hover:border-orange-600  hover:text-orange-600`}>
           <AiFillHtml5 className={iconStyle}/>
           <p className='text-[0.8rem] lg:text-[1rem]'>HTML</p>
-        </div>
-        <div className={`${cardStyle} hover:border-blue-700  hover:text-blue-700`}>
+        </motion.div>
+        <motion.div initial={{y: -200, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{duration: 2, ease:"linear"}} className={`${cardStyle} hover:border-blue-700  hover:text-blue-700`}>
           <FaCss3Alt className={iconStyle} />
           <p className='text-[0.8rem] lg:text-[1rem]'>CSS</p>
-        </div>
-        <div className={`${cardStyle} hover:border-pink-500  hover:text-pink-500`}>
+        </motion.div>
+        <motion.div initial={{y: -200, opacity: 0}} animate={{y: 0, opacity: 1}} transition={{duration: 2, ease: "linear"}} className={`${cardStyle} hover:border-pink-500  hover:text-pink-500`}>
           <FaSass className={iconStyle} />
           <p className='text-[0.8rem] lg:text-[1rem]'>SASS</p>
-        </div>
-        <div className={`${cardStyle}  hover:border-indigo-400  hover:text-indigo-400`}>
+        </motion.div>
+        <motion.div initial={{y: -200, opacity: 0}} animate={{y: 0, opacity: 1}} transition={{duration: 2, ease: "linear"}} className={`${cardStyle}  hover:border-indigo-400  hover:text-indigo-400`}>
           <SiMui className={iconStyle} />
           <p className='text-[0.8rem] lg:text-[1rem]'>MUI</p>
-        </div>
+        </motion.div>
         <div className={`${cardStyle} hover:border-indigo-600  hover:text-indigo-600`}>
           <SiTailwindcss className={iconStyle} />
           <p className='text-[0.8rem] lg:text-[1rem]'>TAILWIND</p>
