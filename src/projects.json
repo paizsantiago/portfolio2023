@@ -1,0 +1,51 @@
+{   
+    "projects":[
+        {
+           "title": "",
+           "img":"https://i.postimg.cc/gkkGbmZf/gamer-Store.png",
+           "deploy":"https://github.com/paizsantiago/proyectoFinal2",
+           "repo":"https://github.com/paizsantiago/proyectoFinal2"
+        },     
+        {
+           "title": "",
+           "img":"https://i.postimg.cc/4xHkXdNF/jungle-Jump.png",
+           "deploy":"https://paizsantiago.github.io/proyectoJS/",
+           "repo":"https://github.com/paizsantiago/proyectoJS"
+        },
+        {
+           "title": "",
+           "img":"https://i.postimg.cc/gJHb1Tkz/inventflix.png",
+           "deploy":"https://proyecto-react-inventflix.web.app/",
+           "repo":"https://github.com/paizsantiago/proyectoReact"
+        },
+        {
+            "title": "",
+            "img":"https://i.postimg.cc/SRG82kSB/burger-Factory.png",
+            "deploy":"https://github.com/paizsantiago/proyectoFinal2",
+            "repo":"https://github.com/paizsantiago/proyectoFinal2"
+        },
+        {
+            "title": "",
+            "img":"https://i.postimg.cc/hvzRGkcB/elden-Ring-Pag.png",
+            "deploy":"https://paizsantiago.github.io/EldenRing-SantiagoPaiz/",
+            "repo":"https://github.com/paizsantiago/EldenRing-SantiagoPaiz"
+        }
+    ],
+    "certificados":[
+        {
+            "url": "https://i.postimg.cc/ZnMG4Dc8/web-Developer.png"
+        },
+        {
+            "url": "https://i.postimg.cc/cLsbPWZp/javascript.png"
+        },
+        {
+            "url": "https://i.postimg.cc/1XhWBhJY/react.png"
+        },
+        {
+            "url": "https://i.postimg.cc/jdvXw701/backend.png"
+        },
+        {
+            "url": "https://i.postimg.cc/FKpnhBFY/fullstack.png"
+        }
+    ]
+}
