@@ -9,15 +9,20 @@ import {motion} from 'framer-motion'
 
 const Navbar: React.FC = () => {
 
-  const liStyle: string = 'hover:opacity-50 cursor-pointer transition hover:-translate-y-1 hover:scale-110 ';
+  const liStyle: string = 'cursor-pointer';
   const animationLi = {
     hidden: {
       opacity: 0,
-      scale: .7
     },
     show:{
       opacity: 1,
-      scale: 1
+    },
+    hover:{
+      opacity: .5,
+      scale: 1.3,
+    },
+    tap:{
+      scale: .9
     }
   }
 
@@ -42,11 +47,11 @@ const Navbar: React.FC = () => {
         bg-white
       '>
           <ul className='lg:fixed lg:h-full flex lg:flex-col gap-6 justify-center text-slate-900 '>
-            <motion.li variants={animationLi} initial="hidden" animate="show" transition={{duration: .6, type: "tween"}} className={liStyle}><a href="#main"><AiFillHome/></a></motion.li>
-            <li className={liStyle}><a href="#skills"><BsBookFill/></a></li>
-            <li className={liStyle}><a href="#projects"><RiComputerFill/></a></li>
-            <li className={liStyle}><a href="#certificate"><FaCertificate/></a></li>
-            <li className={liStyle}><a href="#contact"><AiFillPhone/></a></li>
+            <motion.li variants={animationLi} initial="hidden" animate="show" whileHover="hover" whileTap="tap" className={liStyle}><a href="#main"><AiFillHome/></a></motion.li>
+            <motion.li variants={animationLi} initial="hidden" animate="show" whileHover="hover" whileTap="tap" className={liStyle}><a href="#skills"><BsBookFill/></a></motion.li>
+            <motion.li variants={animationLi} initial="hidden" animate="show" whileHover="hover" whileTap="tap" className={liStyle}><a href="#projects"><RiComputerFill/></a></motion.li>
+            <motion.li variants={animationLi} initial="hidden" animate="show" whileHover="hover" whileTap="tap" className={liStyle}><a href="#certificate"><FaCertificate/></a></motion.li>
+            <motion.li variants={animationLi} initial="hidden" animate="show" whileHover="hover" whileTap="tap" className={liStyle}><a href="#contact"><AiFillPhone/></a></motion.li>
           </ul>
         </nav>
   )

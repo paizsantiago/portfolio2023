@@ -12,6 +12,15 @@ import { FaCss3Alt, FaSass, FaReact, FaGithub, FaNodeJs } from "react-icons/fa";
 import {motion} from 'framer-motion'
 
 const Skills: React.FC = () => {
+
+  const variantSkill = {
+    hidden:{
+      opacity: 0
+    },
+    show:{
+      opacity: 1
+    }
+  }
   
   const iconStyle: string = "text-4xl lg:text-5xl mb-2";
   const cardStyle: string = "flex flex-col lg:mb-0 justify-center items-center w-[50%] lg:w-[80%] justify-self-center lg:m-5 p-5 rounded-sm text-slate-900 border-4 border-slate-900 transition transition-delay-150"
@@ -47,54 +56,54 @@ const Skills: React.FC = () => {
       lg:grid-cols-4 
       grid-rows-3 
       justify-center gap-6">
-        <motion.div className={`${cardStyle} hover:border-orange-600  hover:text-orange-600`}>
+        <motion.div variants={variantSkill} initial="hidden" whileInView="show" viewport={{once: true}} transition={{duration: 1.4, ease:"easeInOut"}}className={`${cardStyle} hover:border-orange-600  hover:text-orange-600`}>
           <AiFillHtml5 className={iconStyle}/>
           <p className='text-[0.8rem] lg:text-[1rem]'>HTML</p>
         </motion.div>
-        <motion.div initial={{y: -200, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{duration: 2, ease:"linear"}} className={`${cardStyle} hover:border-blue-700  hover:text-blue-700`}>
+        <motion.div variants={variantSkill} initial="hidden" whileInView="show" viewport={{once: true}} transition={{duration: 1.4, ease:"easeInOut"}} className={`${cardStyle} hover:border-blue-700  hover:text-blue-700`}>
           <FaCss3Alt className={iconStyle} />
           <p className='text-[0.8rem] lg:text-[1rem]'>CSS</p>
         </motion.div>
-        <motion.div initial={{y: -200, opacity: 0}} animate={{y: 0, opacity: 1}} transition={{duration: 2, ease: "linear"}} className={`${cardStyle} hover:border-pink-500  hover:text-pink-500`}>
+        <motion.div variants={variantSkill} initial="hidden" whileInView="show" viewport={{once: true}} transition={{duration: 1.4, ease:"easeInOut"}} className={`${cardStyle} hover:border-pink-500  hover:text-pink-500`}>
           <FaSass className={iconStyle} />
           <p className='text-[0.8rem] lg:text-[1rem]'>SASS</p>
         </motion.div>
-        <motion.div initial={{y: -200, opacity: 0}} animate={{y: 0, opacity: 1}} transition={{duration: 2, ease: "linear"}} className={`${cardStyle}  hover:border-indigo-400  hover:text-indigo-400`}>
+        <motion.div variants={variantSkill} initial="hidden" whileInView="show" viewport={{once: true}} transition={{duration: 1.4, ease:"easeInOut"}} className={`${cardStyle}  hover:border-indigo-400  hover:text-indigo-400`}>
           <SiMui className={iconStyle} />
           <p className='text-[0.8rem] lg:text-[1rem]'>MUI</p>
         </motion.div>
-        <div className={`${cardStyle} hover:border-indigo-600  hover:text-indigo-600`}>
+        <motion.div variants={variantSkill} initial="hidden" whileInView="show" viewport={{once: true}} transition={{duration: 1.4, ease:"easeInOut"}} className={`${cardStyle} hover:border-indigo-600  hover:text-indigo-600`}>
           <SiTailwindcss className={iconStyle} />
           <p className='text-[0.8rem] lg:text-[1rem]'>TAILWIND</p>
-        </div>
-        <div className={`${cardStyle} hover:border-yellow-400  hover:text-yellow-400`}>
+        </motion.div>
+        <motion.div variants={variantSkill} initial="hidden" whileInView="show" viewport={{once: true}} transition={{duration: 1.4, ease:"easeInOut"}} className={`${cardStyle} hover:border-yellow-400  hover:text-yellow-400`}>
           <IoLogoJavascript className={iconStyle} />
           <p className='text-[0.8rem] lg:text-[1rem]'>JAVASCRIPT</p>
-        </div>
-        <div className={`${cardStyle} hover:border-indigo-700  hover:text-indigo-600`}>
+        </motion.div>
+        <motion.div variants={variantSkill} initial="hidden" whileInView="show" viewport={{once: true}} transition={{duration: 1.4, ease:"easeInOut"}} className={`${cardStyle} hover:border-indigo-700  hover:text-indigo-600`}>
           <SiTypescript className={iconStyle} />
           <p className='text-[0.8rem] lg:text-[1rem]'>TYPESCRIPT</p>
-        </div>
-        <div className={`${cardStyle} hover:border-sky-400  hover:text-sky-400`}>
+        </motion.div>
+        <motion.div variants={variantSkill} initial="hidden" whileInView="show" viewport={{once: true}} transition={{duration: 1.4, ease:"easeInOut"}} className={`${cardStyle} hover:border-sky-400  hover:text-sky-400`}>
           <FaReact className={iconStyle} />
           <p className='text-[0.8rem] lg:text-[1rem]'>REACT</p>
-        </div>
-        <div className={`${cardStyle} hover:border-blue-900  hover:text-blue-900`}>
+        </motion.div>
+        <motion.div variants={variantSkill} initial="hidden" whileInView="show" viewport={{once: true}} transition={{duration: 1.4, ease:"easeInOut"}} className={`${cardStyle} hover:border-blue-900  hover:text-blue-900`}>
           <SiAdobephotoshop className={iconStyle} />
           <p className='text-[0.8rem] lg:text-[1rem]'>PHOTOSHOP</p>
-        </div>
-        <div className={`${cardStyle} hover:border-red-600  hover:text-red-600`}>
+        </motion.div>
+        <motion.div variants={variantSkill} initial="hidden" whileInView="show" viewport={{once: true}} transition={{duration: 1.4, ease:"easeInOut"}} className={`${cardStyle} hover:border-red-600  hover:text-red-600`}>
           <FaGithub className={iconStyle} />
           <p className='text-[0.8rem] lg:text-[1rem]'>GITHUB</p>
-        </div>
-        <div className={`${cardStyle}  hover:border-green-800  hover:text-green-800`}>
+        </motion.div>
+        <motion.div variants={variantSkill} initial="hidden" whileInView="show" viewport={{once: true}} transition={{duration: 1.4, ease:"easeInOut"}} className={`${cardStyle}  hover:border-green-800  hover:text-green-800`}>
           <FaNodeJs className={iconStyle} />
           <p className='text-[0.8rem] lg:text-[1rem]'>NODEJS</p>
-        </div>
-        <div className={`${cardStyle} hover:border-green-600  hover:text-green-600`}>
+        </motion.div>
+        <motion.div variants={variantSkill} initial="hidden" whileInView="show" viewport={{once: true}} transition={{duration: 1.4, ease:"easeInOut"}} className={`${cardStyle} hover:border-green-600  hover:text-green-600`}>
           <SiMongodb className={iconStyle} />
           <p className='text-[0.8rem] lg:text-[1rem]'>MONGODB</p>
-        </div>
+        </motion.div>
       </section>
     </section>
   );

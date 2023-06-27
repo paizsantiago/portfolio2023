@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import data from '../../projects.json'
 import CardProject from './CardProject';
 import {motion} from 'framer-motion'
+import {TfiLayoutSliderAlt} from 'react-icons/tfi'
 
 export interface Project {
     img: string,
@@ -30,10 +31,10 @@ const Projects: React.FC = () => {
             w-auto
             flex
             flex-col
-            justify-evenly
+            justify-center
             items-center
             relative
-            bg-fondo3
+            bg-projectsBg
             h-[100vh]
             lg:col-span-9
             lg:row-span-1 
@@ -52,12 +53,25 @@ const Projects: React.FC = () => {
             font-semibold
             tracking-widest
             lg:text-5xl 
+            h-[20%]
            '>Proyectos</h2>
-            <motion.div ref={carousel} className='cursor-grab overflow-hidden w-[90%] md:w-[70%] 2xl:w-[55%]' whileTap={{cursor: "grabbing"}}>
-                <motion.div drag="x" dragConstraints={{right: 0, left: -width}} className='flex items-center scroll-smooth h-[70vh]'>
+            <motion.div 
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{once: true}}
+                transition={{
+                    duration: 2,
+                    delay: 0.5,
+                    ease: [0, 0.71, 0.2, 1.01]
+                }} 
+                ref={carousel} className='cursor-grab overflow-hidden w-[80%] sm:w-[55%] md:w-[50%] 2xl:w-[50%] h-[60%]' whileTap={{cursor: "grabbing"}}>
+                <motion.div drag="x" dragConstraints={{right: 0, left: -width}} className='flex items-center gap-4 scroll-smooth h-[70vh]'>
                     {projects.map((item) => <CardProject props={item}/>)}
                 </motion.div>
-            </motion.div>
+            </motion.div> 
+            <div className='absolute h-[85vh] lg:h-[90vh] flex justify-center items-end'>
+                <TfiLayoutSliderAlt className='text-4xl text-gray-500'/>
+           </div>  
         </div>
     )
 }

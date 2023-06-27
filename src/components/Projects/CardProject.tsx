@@ -9,29 +9,29 @@ interface Card {
 const CardProject = ({props}: Card) => {
   const {title, img, deploy, repo} = props;
 
-  const linkProps = 'flex-none rounded-full bg-gray-900 px-3.5 py-1 text-[.9rem] lg:text-[1rem] text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900'
+  const linkProps = 'flex-none rounded-full bg-gray-900 px-3.5 py-1 text-[1rem] lg:text-[1rem] text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900'
 
   return (
       <motion.article 
-      className='min-w-[70%]
-        h-[40%]
+      className='min-w-[100%]
+        h-[50%]
         lg:h-[50%]
-        xl:h-[60%]
+        xl:h-[80%]
         flex
         snap-center
         flex-col
         shadow-lg
         rounded-lg border border-zinc-300
         bg-gray-100
-        mx-2
         '>
-          <img src={img} alt={title} className='rounded-t-lg w-[100%] h-[70%] lg:h-[80%] pointer-events-none'/>
+          <img src={img} alt={title} className='rounded-t-lg w-[100%] h-[70%] lg:h-[80%] object-cover pointer-events-none'/>
         <div className='flex
           justify-around
           items-center
-          h-[30%]'>
+          h-[30%]
+          '>
           <a href={deploy} target='_BLANK' rel='noreferrer' className={linkProps}>Deploy</a>
-          <a href={repo} target='_BLANK' rel='noreferrer'className={linkProps}>Repositorio</a>
+          <a href={repo} target='_BLANK' rel='noreferrer'className={linkProps}>Github</a>
         </div>
       </motion.article>
   )

@@ -11,9 +11,9 @@ module.exports = {
       },letterSpacing: {
         widest: '.40em',
       },backgroundImage: {
-        'fondo': "url('./fondo.png')"
-        ,'fondo3': "url('./fondo3.png')",
-        'fondoMain': "url('./fondoMain.png')"
+        'contactBg': "url('./assets/pics/contactBg.png')"
+        ,'projectsBg': "url('./assets/pics/projectsBg.png')",
+        'mainBg': "url('./assets/pics/mainBg.png')"
       }
     },
   },
