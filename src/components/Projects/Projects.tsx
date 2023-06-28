@@ -69,7 +69,7 @@ const Projects: React.FC = () => {
                     {projects.map((item) => <CardProject props={item}/>)}
                 </motion.div>
             </motion.div> 
-            <div className='absolute h-[85vh] lg:h-[90vh] flex justify-center items-end'>
+            <div className='absolute h-[85vh] lg:h-[95vh] flex justify-center items-end'>
                 <TfiLayoutSliderAlt className='text-4xl text-gray-500'/>
            </div>  
         </div>

@@ -30,7 +30,7 @@ const Contacto: React.FC = () => {
     flex-col 
     justify-center 
     items-center 
-    h-[100vh]
+    h-[100%]
     md:h-[100%] 
     xl:pt-40 
     bg-contactBg 
@@ -57,16 +57,16 @@ const Contacto: React.FC = () => {
         justify-evenly 
         w-[90%] 
         sm:w-[60%]
-        h-[60%] 
+        h-[60vh] 
         items-center 
-        gap-10 
+        gap-4
         md:flex-row
         overflow-hidden
         "
       >
         <motion.a
           variants={hoverButton}
-          initial={{y: 200, opacity: 0}}
+          initial={{y: 100, opacity: 0}}
           whileInView={{y: 0, opacity: 1}}
           viewport={{once: true}}
           transition={{delay: .1, duration: 1.1}}
@@ -75,11 +75,11 @@ const Contacto: React.FC = () => {
           className={buttonProps}
           href="https://www.linkedin.com/in/santiago-paiz/"
           target="_blank">
-            <FaLinkedinIn className="text-2xl lg:text-5xl" />
+            <FaLinkedinIn className="text-2xl md:text-4xl lg:text-5xl" />
         </motion.a>
         <motion.a
           variants={hoverButton}
-          initial={{y: 200, opacity: 0}}
+          initial={{y: 100, opacity: 0}}
           whileInView={{y: 0, opacity: 1}}
           viewport={{once: true}}
           transition={{delay: .3, duration: 1.1}}
@@ -88,11 +88,11 @@ const Contacto: React.FC = () => {
           className={buttonProps}
           href="https://github.com/paizsantiago"
           target="_blank">
-            <FiGithub className="text-2xl lg:text-5xl" />
+            <FiGithub className="text-2xl md:text-4xl lg:text-5xl" />
         </motion.a>
         <motion.a 
           variants={hoverButton}
-          initial={{y: 200, opacity: 0}}
+          initial={{y: 100, opacity: 0}}
           whileInView={{y: 0, opacity: 1}}
           viewport={{once: true}}
           transition={{delay: .5, duration: 1.1}}
@@ -101,7 +101,7 @@ const Contacto: React.FC = () => {
           className={buttonProps}
           href="mailto:paizsantiago5@gmail.com"
           target="_blank">
-            <SiGmail className="text-2xl lg:text-5xl" />
+            <SiGmail className="text-2xl md:text-4xl lg:text-5xl" />
         </motion.a>
       </div>
     </section>
