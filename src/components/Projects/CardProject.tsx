@@ -1,6 +1,5 @@
-import React, { useRef } from 'react'
 import { Project } from './Projects';
-import {motion, AnimatePresence} from 'framer-motion'
+import {motion} from 'framer-motion'
 
 interface Card {
     props: Project
@@ -9,7 +8,19 @@ interface Card {
 const CardProject = ({props}: Card) => {
   const {title, img, deploy, repo} = props;
 
-  const linkProps = 'flex-none rounded-full bg-gray-900 px-3.5 py-1 text-[1rem] lg:text-[1rem] text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900'
+  const linkProps = 'text-slate-900 font-semibold border border-gray-400 px-6 py-1 rounded-md text-[1rem] lg:text-[1rem]'
+
+  const hoverLinks = {
+    hover:{
+      scale: 1.05,
+      backgroundColor: "#c4d1db",
+      transition:{
+        duration: .3,
+        delay: .1,
+        type: "spring"
+      }
+    }
+  }
 
   return (
       <motion.article 
@@ -30,8 +41,8 @@ const CardProject = ({props}: Card) => {
           items-center
           h-[30%]
           '>
-          <a href={deploy} target='_BLANK' rel='noreferrer' className={linkProps}>Deploy</a>
-          <a href={repo} target='_BLANK' rel='noreferrer'className={linkProps}>Github</a>
+          <motion.a variants={hoverLinks} whileHover="hover" href={deploy} target='_BLANK' rel='noreferrer' className={linkProps}>Deploy</motion.a>
+          <motion.a variants={hoverLinks} whileHover="hover" href={repo} target='_BLANK' rel='noreferrer'className={linkProps}>Github</motion.a>
         </div>
       </motion.article>
   )

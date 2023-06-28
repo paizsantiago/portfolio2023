@@ -34,7 +34,8 @@ const Contacto: React.FC = () => {
     md:h-[100%] 
     xl:pt-40 
     bg-contactBg 
-    bg-cover">
+    bg-cover
+    ">
       <h2
         id="contact"
         className="h-[10vh] 
@@ -60,6 +61,7 @@ const Contacto: React.FC = () => {
         items-center 
         gap-10 
         md:flex-row
+        overflow-hidden
         "
       >
         <motion.a
