@@ -13,7 +13,7 @@ const Main: React.FC = () => {
           </motion.h1>
           <motion.h2 initial={{x: -700, opacity:0}} animate={{x: 0, opacity: 1}} viewport={{once: true}} transition={{duration: 1, delay: .4, type: "tween"}}><span className='tracking-wide text-slate-900 block p-2 text-5xl lg:text-8xl font-semibold'>Desarrollador<br/>Fullstack</span></motion.h2>
         </div>
-        <p className='lg:text-3xl text-slate-700 px-10 text-center w-[60%]'>Apasionado del desarrollo web, de rápido aprendizaje. Enfocado en encontrar la combinación perfecta entre habilidades y experiencia del usuario. </p>
+        <p className='lg:text-3xl text-slate-700 px-10 text-center lg:w-[60%]'>Apasionado del desarrollo web, de rápido aprendizaje. Enfocado en encontrar la combinación perfecta entre habilidades y experiencia del usuario. </p>
     </main>
   )
 }

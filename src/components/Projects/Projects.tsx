@@ -64,12 +64,12 @@ const Projects: React.FC = () => {
                     delay: 0.5,
                     ease: [0, 0.71, 0.2, 1.01]
                 }} 
-                ref={carousel} className='cursor-grab overflow-hidden w-[80%] sm:w-[55%] md:w-[50%] 2xl:w-[50%] h-[60%]' whileTap={{cursor: "grabbing"}}>
+                ref={carousel} className='cursor-grab overflow-hidden w-[80%] sm:w-[55%] md:w-[50%] 2xl:w-[50%] h-[70%]' whileTap={{cursor: "grabbing"}}>
                 <motion.div drag="x" dragConstraints={{right: 0, left: -width}} className='flex items-center gap-4 scroll-smooth h-[70vh]'>
                     {projects.map((item) => <CardProject props={item}/>)}
                 </motion.div>
             </motion.div> 
-            <div className='absolute h-[85vh] lg:h-[95vh] flex justify-center items-end'>
+            <div className='absolute h-[85vh] lg:h-[90vh] flex justify-center items-end'>
                 <TfiLayoutSliderAlt className='text-4xl text-gray-500'/>
            </div>  
         </div>
